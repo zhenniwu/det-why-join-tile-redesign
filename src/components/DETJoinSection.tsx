@@ -4,7 +4,7 @@ import { ExternalLink, Users, Mail, BookOpen, Database, Heart, Calendar } from "
 const DETJoinSection = () => {
   const tiles = [
     {
-      title: "Join the Slack",
+      title: "Active Slack Community",
       description: "Connect with 7.5K+ data engineers across channels, regions, and topics",
       icon: Users,
       href: "#slack",
@@ -55,7 +55,7 @@ const DETJoinSection = () => {
           Why Join DET?
         </h2>
         <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-          A community of working data engineers sharing knowledge, tools, and support to advance our careers together.
+          Discover the benefits of being part of a vibrant, supportive, and growing data engineering community.
         </p>
       </div>
 
