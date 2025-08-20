@@ -8,36 +8,42 @@ const DETJoinSection = () => {
       description: "Connect with 7.5K+ data engineers across channels, regions, and topics",
       icon: Users,
       href: "#slack",
+      cta: "Join Slack",
     },
     {
       title: "Subscribe to the Newsletter", 
       description: "Monthly updates, resources, events, and community news",
       icon: Mail,
       href: "#newsletter",
+      cta: "Subscribe Now",
     },
     {
       title: "Read on Medium",
       description: "Technical deep dives and career stories from DET members",
       icon: BookOpen,
       href: "#medium",
+      cta: "Read Articles",
     },
     {
       title: "DET Resource Hub",
-      description: "Curated tools, talks, templates, and open source projects",
+      description: "Learn data engineering with recommended books, tools, and frameworks",
       icon: Database,
       href: "#resources",
+      cta: "Browse Resources",
     },
     {
-      title: "Community Highlights",
-      description: "Meet fellow members and see what others are building",
+      title: "Webinars & Events",
+      description: "Attend regular webinars and events featuring domain experts in data engineering",
       icon: Heart,
-      href: "#highlights",
+      href: "#events",
+      cta: "View Events",
     },
     {
       title: "Networking & Support",
-      description: "Find peer support, join casual meetups, or attend regional socials",
+      description: "Build meaningful connections, get support, and grow together with a welcoming community of data professionals",
       icon: Calendar,
       href: "#networking",
+      cta: "Get Connected",
     },
   ];
 
@@ -85,7 +91,7 @@ const DETJoinSection = () => {
                     asChild
                   >
                     <a href={tile.href} className="flex items-center justify-center gap-2">
-                      Get Started
+                      {tile.cta}
                       <ExternalLink className="w-3 h-3" />
                     </a>
                   </Button>
