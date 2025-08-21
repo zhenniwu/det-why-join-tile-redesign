@@ -48,7 +48,7 @@ const DETJoinSectionVariant1 = () => {
   ];
 
   return (
-    <section className="py-16 px-4 sm:px-6 lg:px-8 max-w-6xl mx-auto">
+    <section className="py-16 px-4 sm:px-6 lg:px-8 max-w-4xl mx-auto">
       {/* Header */}
       <div className="text-center mb-12">
         <h2 className="text-3xl sm:text-4xl font-bold font-opensans text-foreground mb-4">

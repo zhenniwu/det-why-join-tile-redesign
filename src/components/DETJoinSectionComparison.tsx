@@ -19,7 +19,7 @@ const DETJoinSectionComparison = () => {
     <div className="min-h-screen bg-background">
       {/* Variant Selector */}
       <div className="sticky top-0 bg-background/95 backdrop-blur-sm border-b border-border z-10 py-4">
-        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex flex-wrap gap-2 justify-center">
             {variants.map((variant) => (
               <Button
