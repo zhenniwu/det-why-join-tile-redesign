@@ -60,20 +60,20 @@ const DETJoinSection = () => {
       </div>
 
       {/* Tiles Grid */}
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
         {tiles.map((tile, index) => {
           return (
             <div
               key={index}
-              className="group relative bg-card border border-border rounded-lg p-6 shadow-card hover:shadow-hover transition-all duration-200 cursor-pointer"
+              className="group relative bg-card border border-border rounded-lg p-8 shadow-card hover:shadow-hover transition-all duration-200 cursor-pointer"
             >
               <div className="flex flex-col h-full">
-                <div className="flex items-start gap-4 mb-4">
+                <div className="flex items-start gap-4 mb-6">
                   <div className="flex-shrink-0 w-10 h-10 bg-secondary rounded-lg flex items-center justify-center group-hover:bg-primary/10 transition-colors duration-200">
                     <span className="text-xl">{tile.emoji}</span>
                   </div>
                   <div className="flex-1">
-                    <h3 className="font-opensans font-extrabold text-lg text-foreground mb-2">
+                    <h3 className="font-opensans font-extrabold text-lg text-foreground mb-3">
                       {tile.title}
                     </h3>
                     <p className="text-sm font-lora text-muted-foreground leading-relaxed">
@@ -82,7 +82,7 @@ const DETJoinSection = () => {
                   </div>
                 </div>
                 
-                <div className="mt-auto pt-4">
+                <div className="mt-auto pt-6">
                   <Button 
                     variant="primary" 
                     size="sm" 
