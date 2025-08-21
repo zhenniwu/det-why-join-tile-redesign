@@ -11,7 +11,7 @@ const DETJoinSection = () => {
       cta: "Join Slack",
     },
     {
-      title: "Subscribe to the Newsletter", 
+      title: "DET Newsletter", 
       description: "Monthly updates, resources, events, and community news",
       emoji: "📧",
       href: "#newsletter",
