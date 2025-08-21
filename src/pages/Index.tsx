@@ -1,9 +1,9 @@
-import DETJoinSection from "@/components/DETJoinSection";
+import DETJoinSectionComparison from "@/components/DETJoinSectionComparison";
 
 const Index = () => {
   return (
-    <div className="min-h-screen bg-background">
-      <DETJoinSection />
+    <div className="min-h-screen">
+      <DETJoinSectionComparison />
     </div>
   );
 };
