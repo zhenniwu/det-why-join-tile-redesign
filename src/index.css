@@ -18,9 +18,10 @@ All colors MUST be HSL.
     --popover: 0 0% 100%;
     --popover-foreground: 220 13% 18%;
 
-    /* Clean blues for primary actions */
-    --primary: 217 91% 60%;
+    /* DET brand blue for primary actions */
+    --primary: 206 100% 50%;
     --primary-foreground: 0 0% 100%;
+    --primary-hover: 188 100% 31%;
 
     /* Subtle grays for secondary elements */
     --secondary: 220 14% 96%;
@@ -77,8 +78,9 @@ All colors MUST be HSL.
     --popover: 222.2 84% 4.9%;
     --popover-foreground: 210 40% 98%;
 
-    --primary: 210 40% 98%;
-    --primary-foreground: 222.2 47.4% 11.2%;
+    --primary: 206 100% 50%;
+    --primary-foreground: 0 0% 100%;
+    --primary-hover: 188 100% 31%;
 
     --secondary: 217.2 32.6% 17.5%;
     --secondary-foreground: 210 40% 98%;
