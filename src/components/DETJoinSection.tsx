@@ -73,7 +73,7 @@ const DETJoinSection = () => {
                     <span className="text-xl">{tile.emoji}</span>
                   </div>
                   <div className="flex-1">
-                    <h3 className="font-opensans font-extrabold text-lg text-foreground mb-2 group-hover:text-primary transition-colors duration-200">
+                    <h3 className="font-opensans font-extrabold text-lg text-foreground mb-2">
                       {tile.title}
                     </h3>
                     <p className="text-sm font-lora text-muted-foreground leading-relaxed">
