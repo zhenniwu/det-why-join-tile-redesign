@@ -83,9 +83,10 @@ const DETJoinSectionVariant2 = () => {
               <Button 
                 variant="primary" 
                 size="sm"
+                className="w-32"
                 asChild
               >
-                <a href={tile.href} className="flex items-center gap-2">
+                <a href={tile.href} className="flex items-center justify-center gap-2">
                   {tile.cta}
                   <ExternalLink className="w-3 h-3" />
                 </a>
