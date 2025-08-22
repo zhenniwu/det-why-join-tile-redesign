@@ -115,9 +115,12 @@ const TestimonialCard: React.FC<{
   return (
     <div
       className={`
-        flex-shrink-0 w-80 bg-card border border-border rounded-lg p-6 shadow-card
+        flex-shrink-0 w-80 bg-card rounded-lg p-6 shadow-card
         transition-all duration-300 ease-out cursor-default
-        ${isHovered ? 'scale-105 shadow-hover' : ''}
+        ${isHovered 
+          ? 'scale-110 shadow-hover border-2 border-primary' 
+          : 'border border-border hover:border-primary/50'
+        }
       `}
       onMouseEnter={onHover}
       onMouseLeave={onLeave}
