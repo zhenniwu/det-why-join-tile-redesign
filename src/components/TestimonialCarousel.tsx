@@ -249,7 +249,7 @@ const TestimonialCarousel: React.FC = () => {
         <div className="relative py-32">
           <div
             ref={scrollContainerRef}
-            className="flex gap-6 scroll-smooth [&::-webkit-scrollbar]:hidden px-20"
+            className="flex gap-6 overflow-x-hidden scroll-smooth [&::-webkit-scrollbar]:hidden px-20"
             style={{ 
               scrollbarWidth: 'none',
               msOverflowStyle: 'none'
