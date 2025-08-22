@@ -1,6 +1,7 @@
 import React, { useEffect, useRef, useState } from "react";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { LinkedinIcon } from "lucide-react";
+import jaiBalaniHeadshot from '@/assets/jai-balani-headshot.png';
 
 interface Testimonial {
   id: string;
@@ -91,7 +92,7 @@ const testimonials: Testimonial[] = [
     title: "Data Engineer",
     company: "Netflix Inc",
     text: "I have found the newsletter and the conferences/workshops quite useful and a great way to connect with other Data Engineers. I also joined the community as a mentor and it was highly fulfilling to work with young talent in this space.",
-    avatar: "/lovable-uploads/f3f77889-e047-49c0-a849-59662f9465ce.png",
+    avatar: jaiBalaniHeadshot,
     linkedinUrl: "https://linkedin.com/in/jai-balani"
   },
   {
