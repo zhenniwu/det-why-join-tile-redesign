@@ -2,6 +2,18 @@ import React, { useEffect, useRef, useState } from "react";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { LinkedinIcon } from "lucide-react";
 
+// Import all testimonial photos
+import shacharMeirPhoto from '@/assets/shachar-meir.png';
+import yaakovBresslerPhoto from '@/assets/yaakov-bressler.png';
+import shivanandaDPhoto from '@/assets/shivananda-d.png';
+import aminatLawalPhoto from '@/assets/aminat-lawal.png';
+import nandiniRajaPhoto from '@/assets/nandini-raja.png';
+import vuTrinhPhoto from '@/assets/vu-trinh.png';
+import praveenBhushanPhoto from '@/assets/praveen-bhushan.png';
+import michelleWintersPhoto from '@/assets/michelle-winters.png';
+import jaiBalaniPhoto from '@/assets/jai-balani.png';
+import anuragSenguptaPhoto from '@/assets/anurag-sengupta.png';
+
 interface Testimonial {
   id: string;
   name: string;
@@ -19,7 +31,7 @@ const testimonials: Testimonial[] = [
     title: "Data Advisor",
     company: "Shachar Meir",
     text: "DET is the community I wish I had when I started my career 20+ years ago! It helped me connect with awesome Data Engineers in my area and beyond, and with really awesome learning experiences.",
-    avatar: "/api/placeholder/64/64",
+    avatar: shacharMeirPhoto,
     linkedinUrl: "https://linkedin.com/in/shachar-meir"
   },
   {
@@ -28,7 +40,7 @@ const testimonials: Testimonial[] = [
     title: "Editor in Chief", 
     company: "Capital One",
     text: "DET makes me a better version of myself (and a better engineer). It provides an opportunity to give back to the tech community by building the exact resources I wish I had when I first started my career. Now, I can support the next generation of data engineers while also elevating the very writers who helped kickstart my own journey.",
-    avatar: "/api/placeholder/64/64",
+    avatar: yaakovBresslerPhoto,
     linkedinUrl: "https://linkedin.com/in/yaakov-bressler"
   },
   {
@@ -37,7 +49,7 @@ const testimonials: Testimonial[] = [
     title: "Data Engineer",
     company: "CVS Health",
     text: "The DET community is amazing - has connected me with excellent professionals whose energy is inspiring. Personally, Xinran's early encouragement and guidance gave me the confidence to grow as both an editor and writer - finding mentors like that is rare, and DET made it easy. Being part of the community has honed my writing skills in conveying technical topics more clearly.",
-    avatar: "/api/placeholder/64/64",
+    avatar: shivanandaDPhoto,
     linkedinUrl: "https://linkedin.com/in/shivananda-d"
   },
   {
@@ -46,7 +58,7 @@ const testimonials: Testimonial[] = [
     title: "Data Engineer",
     company: "Yaadang",
     text: "The community has helped me connect with people who have become not just peers but friends, and has given me access to incredible individuals across every corner of data engineering. DET has attracted some of the brightest minds in the field, and being able to tap into their knowledge, experience, and network has been invaluable.",
-    avatar: "/api/placeholder/64/64",
+    avatar: aminatLawalPhoto,
     linkedinUrl: "https://linkedin.com/in/aminat-lawal"
   },
   {
@@ -55,7 +67,7 @@ const testimonials: Testimonial[] = [
     title: "Data Engineer",
     company: "Alef Education - Abu Dhabi",
     text: "Being part of DET has been a journey of growth, collaboration, and creativity. It gave me the space to try new ideas like co-founding the book club with Amina, where we not only explored two thought-provoking books but also connected with brilliant minds from across the data engineering world. The conversations, the exchange of real-world project experiences, and the diverse perspectives opened my mind in ways I didn't expect.",
-    avatar: "/api/placeholder/64/64", 
+    avatar: nandiniRajaPhoto,
     linkedinUrl: "https://linkedin.com/in/nandini-raja"
   },
   {
@@ -64,7 +76,7 @@ const testimonials: Testimonial[] = [
     title: "Data Engineer",
     company: "Vu Trinh newsletter",
     text: "For me, Data Engineering Things is currently the leading data engineering community. With high-quality articles from skilled writers and a dedicated editorial team, it's my top recommendation for anyone looking to learn about data engineering. I submit nearly every article I write to this publication—it's the ideal place to share my experiences and learn from others.",
-    avatar: "/api/placeholder/64/64",
+    avatar: vuTrinhPhoto,
     linkedinUrl: "https://linkedin.com/in/vu-trinh"
   },
   {
@@ -73,7 +85,7 @@ const testimonials: Testimonial[] = [
     title: "Cloud Data Architect",
     company: "Rackspace Technology",
     text: "DET community has been a valuable partner in my learning journey — offering not just technical insights into modern data engineering practices, but also fresh perspectives on leading and mentoring teams. Through its events, discussions, and connections, I've been able to exchange real-world lessons with peers, discover innovative approaches and stay ahead on trends.",
-    avatar: "/api/placeholder/64/64",
+    avatar: praveenBhushanPhoto,
     linkedinUrl: "https://linkedin.com/in/praveen-bhushan"
   },
   {
@@ -82,7 +94,7 @@ const testimonials: Testimonial[] = [
     title: "Distinguished Architect, Data & AI Infrastructure",
     company: "eBay",
     text: "Data has never been more important—or more impactful—than it is today. DET is a welcoming community where we can connect with fellow data engineers, stay current on the latest trends and developments, learn from trusted experts, and accelerate our professional growth. I wholeheartedly encourage anyone working in data engineering or adjacent spaces to join this community.",
-    avatar: "/api/placeholder/64/64",
+    avatar: michelleWintersPhoto,
     linkedinUrl: "https://linkedin.com/in/michelle-winters"
   },
   {
@@ -91,7 +103,7 @@ const testimonials: Testimonial[] = [
     title: "Data Engineer",
     company: "Netflix Inc",
     text: "I have found the newsletter and the conferences/workshops quite useful and a great way to connect with other Data Engineers. I also joined the community as a mentor and it was highly fulfilling to work with young talent in this space.",
-    avatar: "/api/placeholder/64/64",
+    avatar: jaiBalaniPhoto,
     linkedinUrl: "https://linkedin.com/in/jai-balani"
   },
   {
@@ -100,7 +112,7 @@ const testimonials: Testimonial[] = [
     title: "Senior Software Engineer",
     company: "Walmart Labs",
     text: "Two years ago, I met Xinran at a coffee shop in Los Gatos, and our warm conversation opened up resources and ideas that helped me navigate a transition from a mid-sized startup. One of the key takeaways was the book Designing Data-Intensive Applications, which truly shaped my thinking. That spark from the DET community has come full circle—today, I lead the data platforms at Walmart.",
-    avatar: "/api/placeholder/64/64",
+    avatar: anuragSenguptaPhoto,
     linkedinUrl: "https://linkedin.com/in/anurag-sengupta"
   }
 ];
