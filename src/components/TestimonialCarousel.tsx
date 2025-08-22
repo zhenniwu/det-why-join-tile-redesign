@@ -161,7 +161,7 @@ const TestimonialCard: React.FC<{
         
         {/* Testimonial text */}
         <div className="flex-1">
-          <p className="font-lora text-sm text-foreground leading-relaxed">
+          <p className="font-lora text-sm text-foreground leading-relaxed italic">
             "{testimonial.text}"
           </p>
         </div>
