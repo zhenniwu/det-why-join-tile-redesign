@@ -179,8 +179,8 @@ const TestimonialCarousel: React.FC = () => {
   const [hoveredCard, setHoveredCard] = useState<string | null>(null);
   const animationRef = useRef<number>();
 
-  // Duplicate testimonials for seamless infinite scroll
-  const duplicatedTestimonials = [...testimonials, ...testimonials];
+  // Triple testimonials for seamless infinite scroll
+  const duplicatedTestimonials = [...testimonials, ...testimonials, ...testimonials];
 
   const startAutoScroll = () => {
     if (!scrollContainerRef.current) return;
@@ -192,8 +192,8 @@ const TestimonialCarousel: React.FC = () => {
       if (container) {
         container.scrollLeft += scrollStep;
         
-        // Reset to beginning when we've scrolled past halfway point for seamless loop
-        const singleSetWidth = container.scrollWidth / 2;
+        // Reset to beginning when we've scrolled past the first set for seamless loop
+        const singleSetWidth = container.scrollWidth / 3;
         if (container.scrollLeft >= singleSetWidth) {
           container.scrollLeft = 0;
         }
