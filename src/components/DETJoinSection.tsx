@@ -1,5 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { ExternalLink } from "lucide-react";
+import TestimonialCarousel from "./TestimonialCarousel";
 
 const DETJoinSection = () => {
   const tiles = [
@@ -48,59 +49,63 @@ const DETJoinSection = () => {
   ];
 
   return (
-    <section className="py-16 px-4 sm:px-6 lg:px-8 max-w-4xl mx-auto">
-      {/* Header */}
-      <div className="text-center mb-12">
-        <h2 className="text-3xl sm:text-4xl font-bold font-opensans text-foreground mb-4">
-          Why Join DET?
-        </h2>
-        <p className="text-lg font-lora text-muted-foreground max-w-2xl mx-auto">
-          Discover the benefits of being part of a vibrant, supportive, and growing data engineering community.
-        </p>
-      </div>
+    <>
+      <section className="py-16 px-4 sm:px-6 lg:px-8 max-w-4xl mx-auto">
+        {/* Header */}
+        <div className="text-center mb-12">
+          <h2 className="text-3xl sm:text-4xl font-bold font-opensans text-foreground mb-4">
+            Why Join DET?
+          </h2>
+          <p className="text-lg font-lora text-muted-foreground max-w-2xl mx-auto">
+            Discover the benefits of being part of a vibrant, supportive, and growing data engineering community.
+          </p>
+        </div>
 
-      {/* Tiles Grid */}
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-        {tiles.map((tile, index) => {
-          return (
-            <div
-              key={index}
-              className="group relative bg-card border border-border rounded-lg p-8 shadow-card hover:shadow-hover transition-all duration-200 cursor-pointer"
-            >
-              <div className="flex flex-col h-full">
-                <div className="flex items-start gap-4 mb-6">
-                  <div className="flex-shrink-0 w-10 h-10 bg-secondary rounded-lg flex items-center justify-center group-hover:bg-primary/10 transition-colors duration-200">
-                    <span className="text-xl">{tile.emoji}</span>
+        {/* Tiles Grid */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+          {tiles.map((tile, index) => {
+            return (
+              <div
+                key={index}
+                className="group relative bg-card border border-border rounded-lg p-8 shadow-card hover:shadow-hover transition-all duration-200 cursor-pointer"
+              >
+                <div className="flex flex-col h-full">
+                  <div className="flex items-start gap-4 mb-6">
+                    <div className="flex-shrink-0 w-10 h-10 bg-secondary rounded-lg flex items-center justify-center group-hover:bg-primary/10 transition-colors duration-200">
+                      <span className="text-xl">{tile.emoji}</span>
+                    </div>
+                    <div className="flex-1">
+                      <h3 className="font-opensans font-extrabold text-lg text-foreground mb-3">
+                        {tile.title}
+                      </h3>
+                      <p className="text-sm font-lora text-muted-foreground leading-relaxed">
+                        {tile.description}
+                      </p>
+                    </div>
                   </div>
-                  <div className="flex-1">
-                    <h3 className="font-opensans font-extrabold text-lg text-foreground mb-3">
-                      {tile.title}
-                    </h3>
-                    <p className="text-sm font-lora text-muted-foreground leading-relaxed">
-                      {tile.description}
-                    </p>
+                  
+                  <div className="mt-auto pt-6">
+                    <Button 
+                      variant="primary" 
+                      size="sm" 
+                      className="w-full"
+                      asChild
+                    >
+                      <a href={tile.href} className="flex items-center justify-center gap-2">
+                        {tile.cta}
+                        <ExternalLink className="w-3 h-3" />
+                      </a>
+                    </Button>
                   </div>
-                </div>
-                
-                <div className="mt-auto pt-6">
-                  <Button 
-                    variant="primary" 
-                    size="sm" 
-                    className="w-full"
-                    asChild
-                  >
-                    <a href={tile.href} className="flex items-center justify-center gap-2">
-                      {tile.cta}
-                      <ExternalLink className="w-3 h-3" />
-                    </a>
-                  </Button>
                 </div>
               </div>
-            </div>
-          );
-        })}
-      </div>
-    </section>
+            );
+          })}
+        </div>
+      </section>
+      
+      <TestimonialCarousel />
+    </>
   );
 };
 
