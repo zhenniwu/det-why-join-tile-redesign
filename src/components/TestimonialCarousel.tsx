@@ -92,7 +92,7 @@ const testimonials: Testimonial[] = [
     title: "Data Engineer",
     company: "Netflix Inc",
     text: "I have found the newsletter and the conferences/workshops quite useful and a great way to connect with other Data Engineers. I also joined the community as a mentor and it was highly fulfilling to work with young talent in this space.",
-    avatar: jaiBalaniHeadshot,
+    avatar: "/lovable-uploads/9a196fbf-b331-418f-b95a-f0d496b74282.png",
     linkedinUrl: "https://linkedin.com/in/jai-balani"
   },
   {
