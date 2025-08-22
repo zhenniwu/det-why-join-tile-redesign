@@ -183,13 +183,13 @@ const TestimonialCarousel: React.FC = () => {
   const duplicatedTestimonials = [...testimonials, ...testimonials];
 
   const startAutoScroll = () => {
-    if (!scrollContainerRef.current || isPaused) return;
+    if (!scrollContainerRef.current) return;
 
     const container = scrollContainerRef.current;
     const scrollStep = 0.5; // Slow, smooth scrolling
     
     const scroll = () => {
-      if (container && !isPaused) {
+      if (container) {
         container.scrollLeft += scrollStep;
         
         // Reset to beginning when we've scrolled past halfway point for seamless loop
@@ -199,9 +199,7 @@ const TestimonialCarousel: React.FC = () => {
         }
       }
       
-      if (!isPaused) {
-        animationRef.current = requestAnimationFrame(scroll);
-      }
+      animationRef.current = requestAnimationFrame(scroll);
     };
     
     animationRef.current = requestAnimationFrame(scroll);
@@ -219,17 +217,14 @@ const TestimonialCarousel: React.FC = () => {
     return () => {
       stopAutoScroll();
     };
-  }, [isPaused]);
+  }, []);
 
   const handleCardHover = (cardId: string) => {
     setHoveredCard(cardId);
-    setIsPaused(true);
-    stopAutoScroll();
   };
 
   const handleCardLeave = () => {
     setHoveredCard(null);
-    setIsPaused(false);
   };
 
   return (
