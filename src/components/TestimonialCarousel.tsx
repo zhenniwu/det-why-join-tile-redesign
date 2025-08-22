@@ -124,9 +124,9 @@ const TestimonialCard: React.FC<{
       <div className="flex flex-col h-full">
         {/* Header with avatar and info */}
         <div className="flex items-start gap-4 mb-4">
-          <Avatar className="w-12 h-12 flex-shrink-0">
+          <Avatar className="w-16 h-16 flex-shrink-0">
             <AvatarImage src={testimonial.avatar} alt={testimonial.name} />
-            <AvatarFallback className="bg-secondary text-secondary-foreground font-opensans font-semibold">
+            <AvatarFallback className="bg-secondary text-secondary-foreground font-opensans font-semibold text-lg">
               {testimonial.name.split(' ').map(n => n[0]).join('')}
             </AvatarFallback>
           </Avatar>
@@ -188,9 +188,9 @@ const TestimonialCarousel: React.FC = () => {
       if (container && !isPaused) {
         container.scrollLeft += scrollStep;
         
-        // Reset to beginning when we've scrolled past first set
-        const maxScroll = container.scrollWidth / 2;
-        if (container.scrollLeft >= maxScroll) {
+        // Reset to beginning when we've scrolled past halfway point for seamless loop
+        const singleSetWidth = container.scrollWidth / 2;
+        if (container.scrollLeft >= singleSetWidth) {
           container.scrollLeft = 0;
         }
       }
@@ -234,10 +234,10 @@ const TestimonialCarousel: React.FC = () => {
         {/* Section Header */}
         <div className="text-center mb-12">
           <h2 className="font-opensans font-extrabold text-3xl text-foreground mb-4">
-            What Data Engineers Say
+            Success Stories from Our Community
           </h2>
           <p className="font-lora text-lg text-muted-foreground max-w-2xl mx-auto">
-            Hear from community members who are building the future of data engineering
+            Real experiences from data engineers who've accelerated their careers and expertise through DET
           </p>
         </div>
 
