@@ -249,7 +249,7 @@ const TestimonialCarousel: React.FC = () => {
         <div className="relative py-32 overflow-visible">
           <div
             ref={scrollContainerRef}
-            className="flex gap-6 overflow-x-hidden overflow-y-visible scroll-smooth [&::-webkit-scrollbar]:hidden px-20"
+            className="flex gap-6 scroll-smooth [&::-webkit-scrollbar]:hidden px-20"
             style={{ 
               scrollbarWidth: 'none',
               msOverflowStyle: 'none'
@@ -266,9 +266,9 @@ const TestimonialCarousel: React.FC = () => {
             ))}
           </div>
           
-          {/* Fade gradients */}
-          <div className="absolute left-0 top-32 w-20 h-[calc(100%-16rem)] bg-gradient-to-r from-background to-transparent pointer-events-none z-0" />
-          <div className="absolute right-0 top-32 w-20 h-[calc(100%-16rem)] bg-gradient-to-l from-background to-transparent pointer-events-none z-0" />
+          {/* Fade gradients - larger to fully mask the overflow */}
+          <div className="absolute left-0 top-0 w-32 h-full bg-gradient-to-r from-background via-background to-transparent pointer-events-none z-30" />
+          <div className="absolute right-0 top-0 w-32 h-full bg-gradient-to-l from-background via-background to-transparent pointer-events-none z-30" />
         </div>
       </div>
     </section>
