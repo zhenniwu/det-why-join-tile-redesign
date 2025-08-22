@@ -236,7 +236,7 @@ const TestimonialCarousel: React.FC = () => {
     <section className="py-16 bg-background">
       <div className="max-w-4xl mx-auto px-6">
         {/* Section Header */}
-        <div className="text-center mb-12">
+        <div className="text-center mb-6">
           <h2 className="font-opensans font-extrabold text-3xl text-foreground mb-4">
             What Members Are Saying
           </h2>
