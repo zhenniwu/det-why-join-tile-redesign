@@ -116,10 +116,10 @@ const TestimonialCard: React.FC<{
     <div
       className={`
         flex-shrink-0 w-80 bg-card rounded-lg p-6 shadow-card
-        transition-all duration-300 ease-out cursor-default
+        transition-all duration-300 ease-out cursor-default relative
         ${isHovered 
-          ? 'scale-110 shadow-hover border-2 border-primary' 
-          : 'border border-border hover:border-primary/50'
+          ? 'scale-110 shadow-hover border-2 border-primary z-20' 
+          : 'border border-border hover:border-primary/50 z-10'
         }
       `}
       onMouseEnter={onHover}
