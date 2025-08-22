@@ -246,29 +246,31 @@ const TestimonialCarousel: React.FC = () => {
         </div>
 
         {/* Testimonial Carousel */}
-        <div className="relative py-32 overflow-visible">
-          <div
-            ref={scrollContainerRef}
-            className="flex gap-6 scroll-smooth [&::-webkit-scrollbar]:hidden px-20"
-            style={{ 
-              scrollbarWidth: 'none',
-              msOverflowStyle: 'none'
-            }}
-          >
-            {duplicatedTestimonials.map((testimonial, index) => (
-              <TestimonialCard
-                key={`${testimonial.id}-${Math.floor(index / testimonials.length)}`}
-                testimonial={testimonial}
-                isHovered={hoveredCard === `${testimonial.id}-${Math.floor(index / testimonials.length)}`}
-                onHover={() => handleCardHover(`${testimonial.id}-${Math.floor(index / testimonials.length)}`)}
-                onLeave={handleCardLeave}
-              />
-            ))}
+        <div className="relative py-16 overflow-visible">
+          <div className="relative h-96 overflow-visible">
+            <div
+              ref={scrollContainerRef}
+              className="absolute inset-0 flex gap-6 overflow-x-hidden scroll-smooth [&::-webkit-scrollbar]:hidden px-20 py-8"
+              style={{ 
+                scrollbarWidth: 'none',
+                msOverflowStyle: 'none'
+              }}
+            >
+              {duplicatedTestimonials.map((testimonial, index) => (
+                <TestimonialCard
+                  key={`${testimonial.id}-${Math.floor(index / testimonials.length)}`}
+                  testimonial={testimonial}
+                  isHovered={hoveredCard === `${testimonial.id}-${Math.floor(index / testimonials.length)}`}
+                  onHover={() => handleCardHover(`${testimonial.id}-${Math.floor(index / testimonials.length)}`)}
+                  onLeave={handleCardLeave}
+                />
+              ))}
+            </div>
           </div>
           
-          {/* Fade gradients - larger to fully mask the overflow */}
-          <div className="absolute left-0 top-0 w-32 h-full bg-gradient-to-r from-background via-background to-transparent pointer-events-none z-30" />
-          <div className="absolute right-0 top-0 w-32 h-full bg-gradient-to-l from-background via-background to-transparent pointer-events-none z-30" />
+          {/* Fade gradients */}
+          <div className="absolute left-0 top-16 w-20 h-96 bg-gradient-to-r from-background to-transparent pointer-events-none z-0" />
+          <div className="absolute right-0 top-16 w-20 h-96 bg-gradient-to-l from-background to-transparent pointer-events-none z-0" />
         </div>
       </div>
     </section>
