@@ -234,10 +234,10 @@ const TestimonialCarousel: React.FC = () => {
         {/* Section Header */}
         <div className="text-center mb-12">
           <h2 className="font-opensans font-extrabold text-3xl text-foreground mb-4">
-            Success Stories from Our Community
+            What Members Are Saying
           </h2>
           <p className="font-lora text-lg text-muted-foreground max-w-2xl mx-auto">
-            Real experiences from data engineers who've accelerated their careers and expertise through DET
+            Hear from real data engineers about how DET has supported their growth, learning, and connection in the community.
           </p>
         </div>
 
