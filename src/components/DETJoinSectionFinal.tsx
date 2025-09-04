@@ -1,7 +1,7 @@
 import React, { useState } from "react";
-import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { Button } from "@/components/ui/button";
-import { ChevronLeft, ChevronRight, LinkedinIcon } from "lucide-react";
+import { ExternalLink, ChevronLeft, ChevronRight, LinkedinIcon } from "lucide-react";
+import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 
 interface Testimonial {
   id: string;
@@ -157,10 +157,55 @@ const TestimonialCard: React.FC<{ testimonial: Testimonial }> = ({ testimonial }
   );
 };
 
-const TestimonialCarouselVariant1: React.FC = () => {
+const DETJoinSectionFinal = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
   const testimonialsPerPage = 2;
   const totalPages = Math.ceil(testimonials.length / testimonialsPerPage);
+
+  const tiles = [
+    {
+      title: "Active Slack Community",
+      description: "Connect with 7.5K+ data engineers across channels, regions, and topics",
+      emoji: "💬",
+      href: "#slack",
+      cta: "Join Slack",
+    },
+    {
+      title: "DET Newsletter", 
+      description: "Monthly updates, resources, events, and community news",
+      emoji: "📧",
+      href: "#newsletter",
+      cta: "Subscribe Now",
+    },
+    {
+      title: "Read on Medium",
+      description: "Technical deep dives and career stories from DET members",
+      emoji: "📖",
+      href: "#medium",
+      cta: "Read Articles",
+    },
+    {
+      title: "DET Resource Hub",
+      description: "Learn data engineering with recommended books, tools, and frameworks",
+      emoji: "🛠️",
+      href: "#resources",
+      cta: "Browse Resources",
+    },
+    {
+      title: "Webinars & Events",
+      description: "Attend regular webinars and events featuring domain experts in data engineering",
+      emoji: "📅",
+      href: "#events",
+      cta: "View Events",
+    },
+    {
+      title: "Networking & Support",
+      description: "Build meaningful connections, get support, and grow together with a welcoming community of data professionals",
+      emoji: "🤝",
+      href: "#networking",
+      cta: "Get Connected",
+    },
+  ];
 
   const getCurrentTestimonials = () => {
     const start = currentIndex * testimonialsPerPage;
@@ -176,65 +221,123 @@ const TestimonialCarouselVariant1: React.FC = () => {
   };
 
   return (
-    <section className="py-16 bg-background">
-      <div className="max-w-6xl mx-auto px-6">
-        {/* Section Header */}
+    <>
+      {/* Why Join DET Section - Card Grid Style */}
+      <section className="py-16 px-4 sm:px-6 lg:px-8 max-w-4xl mx-auto">
+        {/* Header */}
         <div className="text-center mb-12">
-          <h2 className="font-opensans font-extrabold text-3xl text-foreground mb-4">
-            What Members Are Saying
+          <h2 className="text-3xl sm:text-4xl font-bold font-opensans text-foreground mb-4">
+            Why Join DET?
           </h2>
-          <p className="font-lora text-lg text-muted-foreground max-w-2xl mx-auto">
-            Hear from real data engineers about how DET has supported their growth, learning, and connection in the community.
+          <p className="text-lg font-lora text-muted-foreground max-w-2xl mx-auto">
+            Discover the benefits of being part of a vibrant, supportive, and growing data engineering community.
           </p>
         </div>
 
-        {/* Navigation Controls */}
-        <div className="flex items-center justify-center mb-8">
-          <Button
-            variant="outline"
-            size="icon"
-            onClick={handlePrevious}
-            className="mr-4"
-          >
-            <ChevronLeft className="w-4 h-4" />
-          </Button>
-          
-          <span className="text-sm text-muted-foreground mx-4">
-            {currentIndex + 1} of {totalPages}
-          </span>
-          
-          <Button
-            variant="outline"
-            size="icon"
-            onClick={handleNext}
-            className="ml-4"
-          >
-            <ChevronRight className="w-4 h-4" />
-          </Button>
+        {/* Tiles Grid */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+          {tiles.map((tile, index) => {
+            return (
+              <div
+                key={index}
+                className="group relative bg-card border border-border rounded-lg p-8 shadow-card hover:shadow-hover transition-all duration-200 cursor-pointer"
+              >
+                <div className="flex flex-col h-full">
+                  <div className="flex items-start gap-4 mb-6">
+                    <div className="flex-shrink-0 w-10 h-10 bg-secondary rounded-lg flex items-center justify-center group-hover:bg-primary/10 transition-colors duration-200">
+                      <span className="text-xl">{tile.emoji}</span>
+                    </div>
+                    <div className="flex-1">
+                      <h3 className="font-opensans font-extrabold text-lg text-foreground mb-3">
+                        {tile.title}
+                      </h3>
+                      <p className="text-sm font-lora text-muted-foreground leading-relaxed">
+                        {tile.description}
+                      </p>
+                    </div>
+                  </div>
+                  
+                  <div className="mt-auto pt-6">
+                    <Button 
+                      variant="primary" 
+                      size="sm" 
+                      className="w-full"
+                      asChild
+                    >
+                      <a href={tile.href} className="flex items-center justify-center gap-2">
+                        {tile.cta}
+                        <ExternalLink className="w-3 h-3" />
+                      </a>
+                    </Button>
+                  </div>
+                </div>
+              </div>
+            );
+          })}
         </div>
+      </section>
+      
+      {/* What Members Are Saying Section - Variant 1 Style */}
+      <section className="py-16 bg-background">
+        <div className="max-w-6xl mx-auto px-6">
+          {/* Section Header */}
+          <div className="text-center mb-12">
+            <h2 className="font-opensans font-extrabold text-3xl text-foreground mb-4">
+              What Members Are Saying
+            </h2>
+            <p className="font-lora text-lg text-muted-foreground max-w-2xl mx-auto">
+              Hear from real data engineers about how DET has supported their growth, learning, and connection in the community.
+            </p>
+          </div>
 
-        {/* Testimonials Grid */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 min-h-[400px]">
-          {getCurrentTestimonials().map((testimonial) => (
-            <TestimonialCard key={testimonial.id} testimonial={testimonial} />
-          ))}
-        </div>
+          {/* Navigation Controls */}
+          <div className="flex items-center justify-center mb-8">
+            <Button
+              variant="outline"
+              size="icon"
+              onClick={handlePrevious}
+              className="mr-4"
+            >
+              <ChevronLeft className="w-4 h-4" />
+            </Button>
+            
+            <span className="text-sm text-muted-foreground mx-4">
+              {currentIndex + 1} of {totalPages}
+            </span>
+            
+            <Button
+              variant="outline"
+              size="icon"
+              onClick={handleNext}
+              className="ml-4"
+            >
+              <ChevronRight className="w-4 h-4" />
+            </Button>
+          </div>
 
-        {/* Page Indicators */}
-        <div className="flex justify-center mt-8 gap-2">
-          {Array.from({ length: totalPages }, (_, i) => (
-            <button
-              key={i}
-              onClick={() => setCurrentIndex(i)}
-              className={`w-2 h-2 rounded-full transition-colors duration-200 ${
-                i === currentIndex ? 'bg-primary' : 'bg-muted'
-              }`}
-            />
-          ))}
+          {/* Testimonials Grid */}
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 min-h-[400px]">
+            {getCurrentTestimonials().map((testimonial) => (
+              <TestimonialCard key={testimonial.id} testimonial={testimonial} />
+            ))}
+          </div>
+
+          {/* Page Indicators */}
+          <div className="flex justify-center mt-8 gap-2">
+            {Array.from({ length: totalPages }, (_, i) => (
+              <button
+                key={i}
+                onClick={() => setCurrentIndex(i)}
+                className={`w-2 h-2 rounded-full transition-colors duration-200 ${
+                  i === currentIndex ? 'bg-primary' : 'bg-muted'
+                }`}
+              />
+            ))}
+          </div>
         </div>
-      </div>
-    </section>
+      </section>
+    </>
   );
 };
 
-export default TestimonialCarouselVariant1;
+export default DETJoinSectionFinal;

@@ -1,9 +1,9 @@
-import DETJoinSectionComparison from "@/components/DETJoinSectionComparison";
+import DETJoinSectionFinal from "@/components/DETJoinSectionFinal";
 
 const Index = () => {
   return (
     <div className="min-h-screen">
-      <DETJoinSectionComparison />
+      <DETJoinSectionFinal />
     </div>
   );
 };
