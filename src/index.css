@@ -21,7 +21,7 @@ All colors MUST be HSL.
     /* DET brand blue for primary actions */
     --primary: 206 100% 50%;
     --primary-foreground: 0 0% 100%;
-    --primary-hover: 188 100% 31%;
+    --primary-hover: 52 97% 49%; /* DET logo yellow #f4d504 */
 
     /* Subtle grays for secondary elements */
     --secondary: 220 14% 96%;
@@ -80,7 +80,7 @@ All colors MUST be HSL.
 
     --primary: 206 100% 50%;
     --primary-foreground: 0 0% 100%;
-    --primary-hover: 188 100% 31%;
+    --primary-hover: 52 97% 49%; /* DET logo yellow #f4d504 */
 
     --secondary: 217.2 32.6% 17.5%;
     --secondary-foreground: 210 40% 98%;
