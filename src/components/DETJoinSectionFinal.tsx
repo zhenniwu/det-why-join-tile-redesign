@@ -167,42 +167,42 @@ const DETJoinSectionFinal = () => {
       title: "Active Slack Community",
       description: "Connect with 7.5K+ data engineers across channels, regions, and topics",
       emoji: "💬",
-      href: "#slack",
+      href: "http://join.det.life/",
       cta: "Join Slack",
     },
     {
       title: "DET Newsletter", 
       description: "Monthly updates, resources, events, and community news",
       emoji: "📧",
-      href: "#newsletter",
+      href: "https://dataengineerthings.substack.com/",
       cta: "Subscribe Now",
     },
     {
       title: "Read on Medium",
       description: "Technical deep dives and career stories from DET members",
       emoji: "📖",
-      href: "#medium",
+      href: "https://medium.com/data-engineer-things",
       cta: "Read Articles",
     },
     {
       title: "DET Resource Hub",
       description: "Learn data engineering with recommended books, tools, and frameworks",
       emoji: "🛠️",
-      href: "#resources",
+      href: null,
       cta: "Browse Resources",
     },
     {
       title: "Webinars & Events",
       description: "Attend regular webinars and events featuring domain experts in data engineering",
       emoji: "📅",
-      href: "#events",
+      href: "https://www.youtube.com/@data-engineer-things/streams",
       cta: "View Events",
     },
     {
       title: "Networking & Support",
       description: "Build meaningful connections, get support, and grow together with a welcoming community of data professionals",
       emoji: "🤝",
-      href: "#networking",
+      href: null,
       cta: "Get Connected",
     },
   ];
@@ -258,17 +258,28 @@ const DETJoinSectionFinal = () => {
                   </div>
                   
                   <div className="mt-auto pt-6">
-                    <Button 
-                      variant="primary" 
-                      size="sm" 
-                      className="w-full"
-                      asChild
-                    >
-                      <a href={tile.href} className="flex items-center justify-center gap-2">
+                    {tile.href ? (
+                      <Button 
+                        variant="primary" 
+                        size="sm" 
+                        className="w-full"
+                        asChild
+                      >
+                        <a href={tile.href} target="_blank" rel="noopener noreferrer" className="flex items-center justify-center gap-2">
+                          {tile.cta}
+                          <ExternalLink className="w-3 h-3" />
+                        </a>
+                      </Button>
+                    ) : (
+                      <Button 
+                        variant="primary" 
+                        size="sm" 
+                        className="w-full opacity-50 cursor-not-allowed"
+                        disabled
+                      >
                         {tile.cta}
-                        <ExternalLink className="w-3 h-3" />
-                      </a>
-                    </Button>
+                      </Button>
+                    )}
                   </div>
                 </div>
               </div>
